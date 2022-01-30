@@ -2,7 +2,12 @@ package com.example.springboottest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
+@RestController
 @SpringBootApplication
 public class SpringBootTestApplication {
 
@@ -11,11 +16,10 @@ public class SpringBootTestApplication {
 	}
 
 	@GetMapping
-	public HashMap<String, String> sayHello() {
-		HashMap<String, String> map = new HashMap<>();
-		map.put("name", "apple");
-		map.put("vegetable", "carrot");
-		map.put("hotel", "trivago");
-		return map;
+	public List<String> hello(){
+		return List.of("Hello", "Apples");
+	}
+
+
 
 }
